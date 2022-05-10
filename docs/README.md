@@ -1,37 +1,27 @@
-## wukongzhang's homepage
+## 语言使用
+### Python
+- [字符串](python/string.md)
+- [数组](python/list.md)
+- [字典](python/dict.md)
+- [集合](python/Set.md)
+- [json](python/json.md)
 
-You can use the [editor on GitHub](https://github.com/WuTeletpe/wuteletpe.github.io/edit/main/README.md) to maintain and preview the content for your website in Markdown files.
+### Javascript
+- [字符串](javascript/string.md)
+- [数组](javascript/Array.md)
+- [字典](javascript/Object.md)
+- [集合](javascript/set.md)
+- [json](javascript/持久化.md)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
-
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [Basic writing and formatting syntax](https://docs.github.com/en/github/writing-on-github/getting-started-with-writing-and-formatting-on-github/basic-writing-and-formatting-syntax).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/WuTeletpe/wuteletpe.github.io/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
+### Golang
+- [变量](golang/变量.md)
+- [结构体](golang/结构体.md)
+- [循环和遍历](golang/循环和遍历.md)
+- [if](golang/if.md)
+- [chan](golang/chan.md)
+- [select](golang/select.md)
+- [指针](golang/指针.md)
+- [字符串](golang/string.md)
+- [数组](golang/array.md)
+- [字典和集合](golang/字典和集合.md)
+- [go-mod](golang/go-mod.md)

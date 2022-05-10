@@ -1,0 +1,51 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+<body>
+<script type="text/javascript">
+var main = document.body;
+//创建链接
+function createa(url,text)
+{
+    var log = console.log.bind(console);  
+    var newAdr = document.createElement("a");
+    newAdr.href = url;
+    var textNode = document.createTextNode(text);
+    newAdr.appendChild(textNode);
+    main.appendChild(newAdr);
+}
+// 调用函数创建链接
+</script> 
+<input type="button" value="button" onclick= "createa('http://www.4399.com','hello')" />
+</body>
+</html>
+<!-- innerHTML 属性设置或返回表格行的开始和结束标签之间的 HTML。 -->
+<!-- 
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+<body>
+<script type="text/javascript">
+var main = document.body;
+//创建链接
+function createa(url,text)
+{
+    var a=document.createElement("a");
+    a.href=url;
+    a.innerHTML=text;
+    a.style.color="red";
+    main.appendChild(a);
+}
+// 调用函数创建链接
+    createa("http://www.imooc.com","慕课网");
+
+</script> 
+</body>
+</html> -->

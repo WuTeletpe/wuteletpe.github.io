@@ -1,0 +1,29 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title> 鼠标经过事件 </title>
+<script type="text/javascript">
+    function message(){
+      confirm("请输入密码后，再单击确定!"); }
+</script>
+</head>
+<body>
+<form>
+密码:<input name="password" type="password" >
+<!-- <input name="确定" type="button" value="确定" onmouseover = "message()"/> -->
+<div onmouseover = "message()">确定</div>
+</form>
+</body>
+</html>
+<!-- 经过的不一定是按钮,onmouseover可以设在其他元素中 -->
+<!-- 其他事件
+鼠标单击事件( onclick ）
+鼠标经过事件（onmouseover）
+鼠标移开事件（onmouseout）
+光标聚焦事件（onfocus）
+失焦事件（onblur）
+内容选中事件（onselect）
+文本框内容改变事件（onchange）
+*******加载事件（onload）*******
+卸载事件（onunload） -->

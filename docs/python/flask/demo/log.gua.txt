@@ -1,0 +1,8 @@
+2020/02/22 09:39:47 请求方法 GET
+2020/02/22 09:39:47 request, query 参数 ImmutableMultiDict([])
+2020/02/22 09:43:18 请求方法 GET
+2020/02/22 09:43:18 request, query 参数 ImmutableMultiDict([('msg', 'few')])
+2020/02/22 09:43:37 message_add 请求方法 POST
+2020/02/22 09:43:37 request, POST 的 form 表单数据 ImmutableMultiDict([('msg_post', 'few')])
+2020/02/22 09:43:37 请求方法 GET
+2020/02/22 09:43:37 request, query 参数 ImmutableMultiDict([])

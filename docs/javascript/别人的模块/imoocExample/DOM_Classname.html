@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+		.input
+		{
+			font-size: 10px;
+		}
+		.one
+		{
+			width: 200px;
+			background-color: #CCC;
+		}
+		.two
+		{
+			font-size: 18px;
+			color: #F00;
+		}
+	</style>
+</head>
+<body>
+<p id="con" class="one">JAVAScript</p>
+<form>
+	<input type="button" value="点击更改" onclick="modifyclass()"/>
+</form>
+<script type="text/javascript">
+	var mychar = document.getElementById("con");
+	document.write("p元素的Class值为："+mychar.className+"<br>");
+	//输出p元素Class属性
+	function modifyclass()
+	{
+		mychar.className = "two";//改变className
+	}
+</script>
+</body>
+</html>
+<!-- 执行结果:点击后只有样式变成了two的样式
+		显示文本仍然写的是：p元素的Class值为：one
+		即，函数调用后，CSS样式会更新，但是javaScript部分不会再次执行 -->
+

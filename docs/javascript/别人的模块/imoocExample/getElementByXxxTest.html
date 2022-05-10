@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>无标题文档</title>
+    </head>
+    
+    <body>
+        <form>
+          请选择你爱好:<br>
+          <input type="checkbox" name="hobby" id="hobby1">  音乐
+          <input type="checkbox" name="hobby" id="hobby2">  登山
+          <input type="checkbox" name="hobby" id="hobby3">  游泳
+          <input type="checkbox" name="hobby" id="hobby4">  阅读
+          <input type="checkbox" name="hobby" id="hobby5">  打球
+          <input type="checkbox" name="hobby" id="hobby6">  跑步 <br>
+          <input type="button" value = "全选" onclick = "checkall();">
+          <input type="button" value = "全不选" onclick = "clearall();">
+          <p>请输入您要选择爱好的序号，序号为1-6:</p>
+          <input id="wb" name="wb" type="text" >
+          <input name="ok" type="button" value="确定" onclick = "checkone();">
+        </form>
+        <script type="text/javascript">
+ 		var log = console.log.bind(console);       
+        function checkall(){
+            var hobby = document.getElementsByTagName("input");
+            for(var i=0;i<hobby.length;i++)
+            {
+            	if(hobby[i].getAttribute("name")=="hobby")
+            	{
+            		hobby[i].checked = true;
+            	}
+            }
+          // 任务1 
+           
+        }
+        function clearall(){
+            var hobby = document.getElementsByName("hobby");
+            for(var i=0;i<hobby.length;i++)
+            {
+            		hobby[i].checked = false;
+            }            
+         // 任务2    
+            
+        }
+        
+        function checkone(){
+            var j=document.getElementById("wb").value;
+        	var selectStr = "hobby"+j;
+        	var selItem = document.getElementById(selectStr);
+        	selItem.checked = true;
+         // 任务3
+        
+        }
+        
+        </script>
+    </body>
+</html>
+<!-- document.write()会影响此处document.getElementsByTagName("input");
+	的结果，原因未知 -->
+	<!--找到一段关于document.write的说明
+	document是引擎开始解析代码前就初始化，放到作用域，推到作用域链的末端，不过这时作用域链是空的，所以document是处于顶端，也就是我们所说的全局变量
+初始化工作类似 var document = new Document();
+而Document是拥有body,getElementById,getElementsByName,write等方法的类
+所以document就拥有了Document的原型方法与其成员变量，但getElementById这些是基于body已经加载完成才能使用，这就是为什么当页面没加载完成时，我们使用不了getElementById的原因，而write并不需要，所以我们可以在页面还没加载完之前调用document.write方法
+并且我们也知道write方法作用是楼上说的“指的是当前文档对象输出”，
+其实调用document.write方法的同时，会调用open与close的方法，具体会这么实现
+document.open();
+document.write();
+document.close();
+当open的时候将会打开一个文档流来输入内容，当文档已存在的时候，则先清空
+write就是写入内容，close就是关闭文档流了
+而上面的例子，当第一次使用document.write的时候，文档还没存在，所以它不会清空，而会将内容是直接附加到文档流中,当有内容附加在文档流后，body自然就会创建了，大家可以用firebug断点就清晰看到第一次document.write之前body为null,当document.write之后，body就为“body”了，所以就解析了楼主为什么document.write之后能使用document.body.appendChild
+但同时提醒大家，非必要情况请不要使用document.write，因为当window.onload的时候，会将文档清空的  -->

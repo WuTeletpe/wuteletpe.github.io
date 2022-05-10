@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <title> new document </title>  
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>   
+  <script type="text/javascript">  
+    var log = console.log.bind(console);
+    function openWindow()
+    {
+        var wantOpen=confirm("是否打开网页");
+        if(wantOpen ==true)
+        {
+            var DS  = prompt("请输入网址");   
+                  window.open(DS,"top=100,left=0,width=600,height=400,menubar=no,toolbar=no,status=no,scrollbars=yes");
+            log(DS);
+                //  window.open("www.hao123.com","top=100,left=0,width=600,height=400,menubar=no,toolbar=no,status=no,scrollbars=yes");
+            // window.open(DNS,"width=400,height=500,menubar=no,toolbar=no");
+        }
+        else
+        {
+            
+        }
+    // 新窗口打开时弹出确认框，是否打开
+
+    // 通过输入对话框，确定打开的网址，默认为 http：//www.imooc.com/
+
+    //打开的窗口要求，宽400像素，高500像素，无菜单栏、无工具栏。
+    }
+    
+  </script> 
+ </head> 
+ <body> 
+	  <input type="button" value="新窗口打开网站" onclick="openWindow()" /> 
+ </body>
+</html>

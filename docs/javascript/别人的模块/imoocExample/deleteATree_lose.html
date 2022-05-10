@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+</head>
+
+<body>
+<div id="content">
+  <h1>html</h1>
+  <h1>php</h1>
+  <h1>javascript</h1>
+  <h1>jquery</h1>
+  <h1>java</h1>
+</div>
+
+<script type="text/javascript">
+    var log = console.log.bind(console);
+    function get_Last(n){
+        var x=n;
+        while (x.firstChild){
+            x=x.firstChild;
+        }
+        return x;
+    }
+    function removeReturnParent(n){
+        var x=n.parentNode;
+        var end;
+        if(x){
+            end=x.parentNode;
+        }
+        else
+        {
+            end = n;
+        }
+        return end;
+    }
+function clearText() 
+{
+  var content=document.getElementById("content");
+  var child = content;
+  var parent = content;
+  while(parent.childNodes.length!=0)
+  {
+      child = get_Last(child);
+      log(child);
+      parent = removeReturnParent(child);
+      child = parent;
+      var x = parent.removeChild(parent.firstChild);
+      x = null;
+  }
+  // 在此完成该函数
+  
+  
+}
+</script>
+
+<button onclick="clearText()">清除节点内容</button>
+
+
+
+</body>
+</html>
+
+<!-- 尝试在删除整棵树，但是不小心删多了，按钮也没了 -->

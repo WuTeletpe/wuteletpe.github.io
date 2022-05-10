@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <script src="WdatePicker.js"></script>
+</head>
+
+<body>
+    <div id="id-div">
+
+    </div>
+    <script>
+        var log = function() {
+            console.log.apply(console, arguments)
+        }
+
+        function createElement(type, name) {
+            var element = null;
+            try {
+                element = document.createElement('<' + type + ' name="' + name + '">');
+            } catch (e) {}
+            if (element == null) {
+                element = document.createElement(type);
+                element.name = name;
+            }
+            return element;
+        }
+
+        var div = document.getElementById('id-div')
+        oNode = createElement('input', 'leipiNewField');
+        oNode.setAttribute('type', 'text')
+        oNode.setAttribute('class', 'Wdate')
+        oNode.setAttribute('id', 'node')
+        // yMdHmswWD分别代表年,月,日,时,分,秒,星期(0-6),周(1-52),星期(一-六) 
+        // 1997-01-01 12:30
+        f = "yyyy-MM-dd HH:mm"
+        f = "HH:mm"
+        f = "DD_MM-dd"
+        // f = "yyyy-MM-dd"
+        // f = "yyyy年MM月dd日"
+        // f = "yyyy年MM月"
+        // f = "yyyy"
+        // f = "yyyy年"
+        // f = "M月d日"
+        oNode.setAttribute('onclick', `var a = WdatePicker({isShowWeek:true, dateFmt:'${f}'});`)
+        // oNode.addEventListener('click', function(){
+        //     WdatePicker({isShowWeek:true, dateFmt:f})
+        // })
+        if(f == "DD_MM-dd") {
+            oNode.setAttribute('onblur', `this.value = this.value.slice(0, 3)`)
+            // oNode.addEventListener('blur', function(){this.value = this.value.slice(0, 3)})
+        }
+        div.append(oNode)
+    </script>
+    <!-- <input type="text" class="Wdate" id="d122" onclick="WdatePicker(
+            {
+                isShowWeek:true,
+                onpicked:function() {
+                    $dp.$('d122_1').value = $dp.cal.getP('W','W');
+                    $dp.$('d122_2').value= $dp.cal.getP('W','WW');
+                }
+            }
+        )" />
+    <input type="text" id="d122_1">
+    <input type="text" id="d122_2"> -->
+</body>
+
+</html>
