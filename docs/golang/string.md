@@ -71,3 +71,23 @@ s := strconv.FormatFloat(3.1415, 'E', -1, 64)
 s := strconv.FormatInt(-42, 16)
 s := strconv.FormatUint(42, 16)
 ```
+
+### Convert string to bytes
+
+When you convert a string to a byte slice, you get a new slice that contains the same bytes as the string.
+
+```
+b := []byte("ABC€")
+fmt.Println(b) // [65 66 67 226 130 172]
+```
+
+Note that the character `€` is encoded in UTF-8 using 3 bytes. See the [Go rune article](https://yourbasic.org/golang/rune/) for more on UTF-8 encoding of Unicode code points.
+
+### Convert bytes to string
+
+When you convert a slice of bytes to a string, you get a new string that contains the same bytes as the slice.
+
+```
+s := string([]byte{65, 66, 67, 226, 130, 172})
+fmt.Println(s) // ABC€
+```
